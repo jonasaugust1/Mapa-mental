@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <title>Mapa Mental</title>
+</head>
+
+<body>
+    <header>
+        <h1>Projeto avaliativo mapa mental</h1>
+
+        <nav class="navigation">
+            <ul>
+                <li>
+                    <a href="#resumo">Resumo</a>
+                </li>
+                <li>
+                    <a href="#entidades">Entidades</a>
+                </li>
+                <li>
+                    <a href="#relacionamentos">Relacionamentos</a>
+                </li>
+                <li>
+                    <a href="#database">Database</a>
+                </li>
+                <li>
+                    <a href="#tecnologias">Tecnologias</a>
+                </li>
+                <li>
+                    <a href="#conclusao">Conclusão</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="resumo">
+            <h2>Resumo do Projeto</h2>
+
+            <div class="box-container">
+                <div class="text-container">
+                    <div class="descricao">
+                        <h3>Descrição do produto</h3>
+                        <p>
+                            O app tem como funcionalidade principal colher informações e gerar um Relatório Operacional
+                            de
+                            voo
+                            que poderá ficar salvo offline e posteriormente ser mandado para a API
+                        </p>
+                    </div>
+
+                    <div class="publico-alvo">
+                        <h3>Publico Alvo</h3>
+                        <p>Empresas agrícolas que necessitam informatizar e fazer seus relatórios
+                            de maneira mais eficiente e rápida
+                        </p>
+                    </div>
+                </div>
+
+                <div class="img-container">
+                    <img src="./imgs/farm.jpg" alt="Aeronave agrícola">
+                </div>
+            </div>
+        </section>
+
+        <section id="entidades">
+            <div class="container">
+                <h2>Entidades</h2>
+                <p>Defini as entidades de acordo com as informações necessárias
+                    para gerar o relatório.
+                    Essas entidades são objetos que servem para abstrair um modelo real
+                    para o código em que permitirá fazer as operações de CRUD
+                </p>
+            </div>
+
+            <div class="list-container">
+                <ul>
+                    <h4>São elas:</h4>
+                    <li>Cliente</li>
+                    <li>Aeronave</li>
+                    <li>Piloto</li>
+                    <li>Relatório de Serviço</li>
+                    <li>Propriedade</li>
+                    <li>Serviço</li>
+                    <li>Cultura</li>
+                    <li>Produto</li>
+                    <li>Pista</li>
+                    <li>Equipamento</li>
+                    <li>Usuário</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="relacionamentos">
+            <div class="container">
+                <h2>Relaciomentos</h2>
+                <p>
+                    Relacionamentos são como as entidades interagem entre si<br>
+                    Um pra um 1-1<br>
+                    Um para muitos 1-n<br>
+                    Muito para muitos n-m
+                </p>
+            </div>
+
+            <div class="list-container">
+                <span>São eles:</span>
+                <ul>
+                    <h4>1-n</h4>
+                    <li>
+                        Cliente : Propriedade - 1-n
+                        ( Um cliente pode ter várias propriedades e uma propriedade só pode ter um cliente)
+                    </li>
+                    <li>
+                        Propriedade : Pista - 1-n
+                        ( Uma propriedade pode ter várias pistas, mas uma pista está inserida em apenas uma propriedade)
+                    </li>
+                    <li>
+                        Piloto : Relatório de Serviço - 1-n
+                        (Um piloto pode estar em vários relatórios, mas em um relatório somente pode haver um piloto)
+                    </li>
+                    <li>
+                        Engenheiro : Relatório de Serviço - 1-n
+                        (Um engenheiro pode estar em mais de um relatório, mas em um relatório só pode haver um)
+                        engenheiro
+                    </li>
+                    <li>
+                        Aeronave : Relatório de Serviço - 1-n
+                        (Uma aeronave pode estar em mais de um relatório, mas um relatório só pode conter uma aeronave)
+                    </li>
+
+                    <h4>n-m</h4>
+                    <li>
+                        Pista : Relatório de Serviço - n-m
+                        (Uma pista pode estar em vários relatórios e um relatório pode conter mais de uma pista)
+                    </li>
+                    <li>
+                        Cliente : Relatório de Serviço - n-m
+                        (Um cliente pode estar em vários relatórios e em um relatório pode conter mais de um cliente)
+                    </li>
+                    <li>
+                        Propriedade : Relatório de Serviço - n-m
+                        ( Uma propriedade pode estar em vários relatórios e em um relatório pode conter mais de uma
+                        propriedade)
+                    </li>
+                    <li>
+                        Cultura : Relatório de Serviço - n-m
+                        ( Uma cultura pode estar em vários relatórios e um relatório pode conter mais de uma cultura)
+                    </li>
+                    <li>
+                        Equipamento: : Relatório de Serviço - n-m
+                        ( Um equipamento pode estar em vários relatórios e um relatório pode conter mais de um
+                        equipamentos)
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="database">
+            <div class="container">
+                <h2>Database</h2>
+                <p>
+                    Elenquei os principais bancos de dados a serem utilizados de acordo com os seguintes critérios:
+
+                    <strong>Performance</strong>
+                    <strong>Tamanho do projeto</strong>
+                    <strong>Custo</strong>
+                </p>
+            </div>
+
+            <div class="list-container">
+                <ul>
+                    <h4>SQLServer Standart/Enterprise</h4>
+                    <li>Licença: Paga</li>
+                    <li>Custo: Alto</li>
+                    <li>Tamanho do Projeto: Médio a Grande</li>
+                    <li>Relacional</li>
+
+                    <h4>Oracle</h4>
+                    <li>Licença: Paga</li>
+                    <li>Custo: Alto</li>
+                    <li>Tamanho do Projeto: Grande</li>
+                    <li>Relacional</li>
+                    <li>Alta Performance</li>
+
+                    <h4>MongoDB</h4>
+                    <li>Licença: Gratuito</li>
+                    <li>Custo: Alto</li>
+                    <li>Tamanho do Projeto: Médio a Grande</li>
+                    <li>Não Relacional</li>
+                    <li>Alta Performance</li>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="tecnologias">
+            <div class="container">
+                <h2>Tecnologias</h2>
+                <p>Elenquei as principais tecnologias para serem usadas no projeto
+
+                    Mobile- Rect Native pela sua facilidade de criar aplicativos multiplataforma (Android e IOS)
+
+                    Desktop - Electron para fazer aplicativos desktop onde o usuário poderá utiliza-lo offline e
+                    utilizar as
+                    vantagens do seu sistema operacional
+
+                    Web/ Frontend - React pela facilidade de criar componentes e alta adesão do mercado
+
+                    Backend - Python e Django para fazer a API que servirá de apoio a todo os outros citados acima
+                </p>
+            </div>
+
+            <div class="list-container">
+                <ul>
+                    <h4>Mobile</h4>
+                    <li>React Native</li>
+                    <li>Typescript</li>
+
+                    <h4>Desktop</h4>
+                    <li>Electron</li>
+                    <li>Typescript</li>
+
+                    <h4>Web - Frontend</h4>
+                    <li>React</li>
+                    <li>Typescript</li>
+
+                    <h4>Backend</h4>
+                    <li>Python</li>
+                    <li>Django</li>
+                </ul>
+            </div>
+        </section>
+
+        <aside>
+            <h3>Mapa Mental</h3>
+            <iframe width="768" height="432"
+                src="https://miro.com/app/live-embed/uXjVPLT-RrA=/?moveToViewport=-7306,-4230,17741,11060&embedId=870231694450"
+                frameborder="0" scrolling="no" allowfullscreen>
+            </iframe>
+        </aside>
+
+        <section id="conclusao">
+            <div class="container">
+                <h2>Conclusão</h2>
+                <p>
+                    O projeto tem uma ampla utilidade e uma demanda considerável,
+                    além de ser útil e facilitar o trabalho de geração de relatórios.
+                </p>
+            </div>
+
+            <div class="list-container">
+                <ul>
+                    <h4>Passos a seguir</h4>
+                    <li>
+                        Definir um MVP do projeto para que possa ser feito e testado o mais rápido possível
+                    </li>
+                    <li>
+                        Definir um banco de dados que encaixe melhor na estrutura do projeto
+                    </li>
+                    <li>
+                        Definir as entidades
+                    </li>
+                    <li>
+                        Criar a API observando seus relacionamentos, caso a escolha do banco de dados for um de modelo
+                        relacional
+                    </li>
+                    <li>
+                        Criar as aplicações mobile, desktop e web
+                    </li>
+                    <li>
+                        Fazer testes unitários, de integração e E2E
+                    </li>
+                    <li>
+                        Conectar com a API
+                    </li>
+                    <li>
+                        Fazer o deploy das aplicações e jogar para o cliente testar
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/jonasaug/">Jonas Augusto</a>
+    </footer>
+</body>
+
+</html>
