@@ -188,3 +188,47 @@ footer a:hover{
     color: var(--color-secundaria);
 }
 
+@media only screen and (max-width: 600px){
+
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    h3 {
+        font-size: 1rem;
+    }
+    
+    h4 {
+        font-size: 0.8rem;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .navigation ul li a {
+        font-size: 0.6rem;
+    }
+
+    .box-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-container {
+        width: 100%;
+    }
+
+    #entidades, #relacionamentos, #database, #tecnologias, #conclusao {
+        text-align: left;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .list-container ul {
+        text-align:left;
+    }
+    
+}
